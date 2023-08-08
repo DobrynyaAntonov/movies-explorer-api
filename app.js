@@ -7,6 +7,7 @@ const { errors } = require('celebrate');
 const cors = require('cors');
 const router = require('./routes');
 const { errorHandler } = require('./middlewares/error');
+const rateLimiter = require('./utils/rateLimiter');
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(cors({
   origin: ['https://diplom.dobrynya.nomoreparties.co', 'http://localhost:3000'],
   credentials: true,
 }));
+app.use(rateLimiter);
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
