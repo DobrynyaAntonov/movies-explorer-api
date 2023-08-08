@@ -15,7 +15,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/bitfilmsdb', {
 });
 
 app.use(cors({
-  origin: ['https://mesto.dobrynya.nomoredomains.work', 'http://localhost:3000'],
+  origin: ['https://diplom.dobrynya.nomoreparties.co', 'http://localhost:3000'],
   credentials: true,
 }));
 app.use(bodyParser.json());
